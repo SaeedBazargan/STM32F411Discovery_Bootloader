@@ -775,7 +775,7 @@ static void goto_application(void)
  8000776:	4809      	ldr	r0, [pc, #36]	@ (800079c <goto_application+0x2c>)
  8000778:	f001 fe42 	bl	8002400 <puts>
 
-	void(*app_reset_handler) (void) = (void*) (*(volatile uint32_t*)(0x8000000 + 4));
+	void(*app_reset_handler) (void) = (void*) (*(volatile uint32_t*)(0x08020000 + 4));
  800077c:	4b08      	ldr	r3, [pc, #32]	@ (80007a0 <goto_application+0x30>)
  800077e:	681b      	ldr	r3, [r3, #0]
  8000780:	607b      	str	r3, [r7, #4]
@@ -795,7 +795,7 @@ static void goto_application(void)
  8000798:	bd80      	pop	{r7, pc}
  800079a:	bf00      	nop
  800079c:	08003100 	.word	0x08003100
- 80007a0:	08000004 	.word	0x08000004
+ 80007a0:	08020004 	.word	0x08020004
  80007a4:	40020c00 	.word	0x40020c00
 
 080007a8 <Error_Handler>:
