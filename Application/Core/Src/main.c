@@ -57,7 +57,16 @@ static void MX_USART2_UART_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+int _write(int file, char *ptr, int len)
+{
+	int i = 0;
+	for(i = 0; i < len; i++)
+	{
+		ITM_SendChar(*ptr++);
 
+	}
+	return len;
+}
 /* USER CODE END 0 */
 
 /**
@@ -91,7 +100,7 @@ int main(void)
   MX_GPIO_Init();
   MX_USART2_UART_Init();
   /* USER CODE BEGIN 2 */
-  printf("Starting Application (%d.%d)\n", App_Version[0], App_Version[1]);
+  printf(" Starting Application (%d.%d)\n", App_Version[0], App_Version[1]);
   /* USER CODE END 2 */
 
   /* Infinite loop */
